@@ -1,0 +1,28 @@
+{{> header}}
+<div class="offer-details">
+            <h1>Under Armour HOVR</h1>
+            <div class="info">
+                <img src="{{event.imageUrl}}"
+                    alt="shoe">
+                <div class="description">{{event.description}}
+                    <br>
+                    <br>
+                       <p ><strong>Buyers:</strong> {{event.peopleBoughtIt.length}}</p>
+                    <br>
+                    <p class="price">${{event.price}}</p>
+                </div>
+            </div>
+             <div class="actions">
+        {{#if event.canEdit}}
+            <a href="#/edit/{{event.objectId}}">Edit</a>
+            <a href="#/delete/{{event.objectId}}">Delete</a>
+        {{else}}
+            {{#if event.canBuy}}
+                <span>You bought it</span>
+            {{else}}
+            <a href="#/buy/{{event.objectId}}">Buy</a>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>
+{{> footer}}
