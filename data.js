@@ -15,7 +15,7 @@ const endpoints = {
 
 // ------------------------- REGISTER -------------------------
 export async function register(email, password) {
-    // beginRequest();
+     beginRequest();
 
     const result = (await fetch(host(endpoints.REGISTER), {
         method: "POST",
@@ -28,14 +28,14 @@ export async function register(email, password) {
         })
     })).json();
 
-    // endRequest();
+     endRequest();
 
     return result;
 }
 
 // ------------------------- LOGIN -------------------------
 export async function login(username, password) {
-    // beginRequest();
+     beginRequest();
 
     const result = await (await fetch(host(endpoints.LOGIN), {
         method: "POST",
@@ -52,7 +52,7 @@ export async function login(username, password) {
     localStorage.setItem("userEmail", result.email);
     localStorage.setItem("userId", result.objectId);
 
-    // endRequest();
+     endRequest();
 
     return result;
 }

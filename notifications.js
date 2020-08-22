@@ -12,7 +12,6 @@ export function showSuccess(message) {
     }
 }
 
-
 export function showError(message) {
     let error = document.querySelector("#errorBox");
     error.addEventListener("click", hideError);
@@ -20,6 +19,8 @@ export function showError(message) {
 
     error.textContent = message
     error.style.display = "block";
+    
+    setTimeout((hideError), 5000);
 
     function hideError() {
     error.style.display = "none";

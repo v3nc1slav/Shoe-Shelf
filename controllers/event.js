@@ -27,10 +27,6 @@ export async function createPost() {
             throw new Error("Price cannot be 0 or a negative value.");
         }
 
-        //if (!this.params.imageURL.startsWith("http://") && !this.params.imageURL.startsWith("https://")) {
-        //    throw new Error("Image URL should start with \"http://\" or \"https://\".");
-        //}
-
         const event = {
             name: this.params.name,
             price: this.params.price,
@@ -88,10 +84,6 @@ export async function editPost() {
         if (this.params.description.length < 10) {
             throw new Error("Description must be at least 10 characters long.");
         }
-
-        //if (!this.params.imageURL.startsWith("http://") && !this.params.imageURL.startsWith("https://")) {
-        //     throw new Error("Image URL should start with \"http://\" or \"https://\".");
-        //}
 
         const event = {
             name: this.params.name,
